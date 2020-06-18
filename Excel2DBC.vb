@@ -117,8 +117,8 @@ While Len(ActiveSheet.Cells(i, 5)) > 0
     Print #1, " SG_ " & ActiveSheet.Cells(i, 5) & " : " & ActiveSheet.Cells(i, 6) & "|" & ActiveSheet.Cells(i, 7) & "@" & byte_order & value_type & _
         " (" & Num2Str(ActiveSheet.Cells(i, 11)) & "," & Num2Str(ActiveSheet.Cells(i, 12)) & ") " & "[" & Num2Str(ActiveSheet.Cells(i, 13)) & "|" & Num2Str(ActiveSheet.Cells(i, 14)) & "] " & _
         """" & ActiveSheet.Cells(i, 15) & """" & rx
-    If Len(ActiveSheet.Cells(i, 10)) > 0 And Len(ActiveSheet.Cells(i, 1)) > 0 And ActiveSheet.Cells(i, 11) <> 0 Then
-        initial_value = (ActiveSheet.Cells(i, 10) + ActiveSheet.Cells(i, 12)) / ActiveSheet.Cells(i, 11)
+    If Len(ActiveSheet.Cells(i, 10)) > 0 And ActiveSheet.Cells(i, 11) <> 0 Then 'And Len(ActiveSheet.Cells(i, 1)) > 0
+        initial_value = (ActiveSheet.Cells(i, 10) - ActiveSheet.Cells(i, 12)) / ActiveSheet.Cells(i, 11)
         initial_value_list = initial_value_list & "BA_ ""GenSigStartValue"" SG_ " & id & " " & signal & " " & initial_value & ";" & vbLf
     End If
     If Len(ActiveSheet.Cells(i, 16)) > 0 Then
